@@ -11,7 +11,7 @@ rem set BuildFolder=%cd%
 
 echo ---------------------------------------------------
 :RestoreIB
-echo ������� ���� ����� �
+echo Запустить загрузку ИБ из файла
 echo %~dp1
 start "" /wait "%V8Bin%\1cv8.exe" CREATEINFOBASE File="%~dp1"
 start "" /wait "%V8Bin%\1cv8.exe" config /F"%~dp1" /restoreib"%~f1"
@@ -19,7 +19,7 @@ start "" /wait "%V8Bin%\1cv8.exe" config /F"%~dp1" /restoreib"%~f1"
 if not exist "%~dp1\1cv8.1cd" goto :RestoreIBError
 if NOT ERRORLEVEL 1 goto :StartBase
 :RestoreIBError
-echo ���� �� ᮧ����
+echo Загрузка ИБ из файла завершена
 pause
 exit /B 2
 
